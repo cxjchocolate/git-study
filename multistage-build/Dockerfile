@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM golang:1.16 AS builder
 WORKDIR /go/src/
-COPY ../hello-world.go   ./
+COPY ./hello-world.go   ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o hello-world ./hello-world.go
 
 FROM alpine:latest  
